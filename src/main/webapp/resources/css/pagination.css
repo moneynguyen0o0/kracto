@@ -1,0 +1,32 @@
+ul.paging {
+	display: inline-block;
+}
+
+ul.paging li {
+	float: left;
+}
+
+ul.paging li a {
+	color: #222;
+	padding: 10px 16px;
+}
+
+ul.paging li.disabled a{
+	cursor: not-allowed;
+}
+
+ul.paging li.active a{
+	background-color: #2980b9;;
+	color: white;
+	cursor: not-allowed;
+}
+
+ul.paging li:hover:not(.active ) a {
+	background-color: #ddd;
+}
+
+@media screen and (max-width: 480px) {
+	ul.paging li a {
+		padding: 6px 11px;
+	}
+}

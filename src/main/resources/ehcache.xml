@@ -1,0 +1,68 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<!-- By default, Ehcache stored the cached files in temp folder. -->
+	<diskStore path="java.io.tmpdir/ehcache" />
+
+	<defaultCache maxEntriesLocalHeap="10000" eternal="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="3600" diskSpoolBufferSizeMB="30"
+		maxEntriesLocalDisk="10000000" diskExpiryThreadIntervalSeconds="600"
+		memoryStoreEvictionPolicy="LRU" statistics="true">
+		<persistence strategy="localTempSwap" />
+	</defaultCache>
+
+	<!-- Sample cache named getTopOnEnUser This cache contains a maximum in 
+		memory of 10000 elements, and will expire an element if it is idle for more 
+		than 5 minutes and lives for more than 10 minutes. If there are more than 
+		10000 elements it will overflow to the disk cache, which in this configuration 
+		will go to wherever java.io.tmp is defined on your system. On a standard 
+		Linux system this will be /tmp" -->
+
+	<!-- The maxEntriesLocalHeap enforcement is only going to count the number 
+		of key/value pairs you store in the cache. -->
+
+	<cache name="getTopOnEnUser" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="getTopOnViUser" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="findEnByRootCateWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="findViByRootCateWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="findEnBySubCateWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="findViBySubCateWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="findEnByIdWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="findViByIdWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="findEnRelatedWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="findViRelatedWithProc" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="findCommentsByArticleId" maxEntriesLocalHeap="10000" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="getCategoriesByRootMap" maxEntriesLocalHeap="1000" eternal="true">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+</ehcache>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- USER -->
+	<definition name="user.base" template="/WEB-INF/layouts/user/page.jsp">
+		<put-attribute name="header" value="/WEB-INF/layouts/user/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/layouts/user/footer.jsp" />
+	</definition>
+	
+	<definition name="user.message" extends="user.base">
+		<put-attribute name="title" value="tilte.home" />
+		<put-attribute name="body" value="/WEB-INF/views/user/message.jsp" />
+	</definition>
+
+	<definition name="user.list" extends="user.base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/article/list.jsp" />
+	</definition>
+	<definition name="user.single" extends="user.base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/article/single.jsp" />
+	</definition>
+	<definition name="user.related.article" template="/WEB-INF/views/user/article/related.jsp">
+	</definition>
+	
+	<definition name="user.search" extends="user.base">
+		<put-attribute name="body" value="/WEB-INF/views/user/search.jsp" />
+	</definition>
+	
+	<definition name="signin" extends="user.base">
+		<put-attribute name="title" value="tilte.signin" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/account/signin.jsp" />
+	</definition>
+	<definition name="signup" extends="user.base">
+		<put-attribute name="title" value="tilte.signup" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/account/signup.jsp" />
+	</definition>
+	<definition name="user.password.reset" extends="user.base">
+		<put-attribute name="title" value="tilte.password.reset" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/account/password-reset.jsp" />
+	</definition>
+	<definition name="user.password.change" extends="user.base">
+		<put-attribute name="title" value="tilte.password.change" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/account/password-change.jsp" />
+	</definition>
+	<definition name="user.account.profile" extends="user.base">
+		<put-attribute name="title" value="tilte.profile" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/account/profile.jsp" />
+	</definition>
+	<definition name="about" extends="user.base">
+		<put-attribute name="title" value="tilte.about" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/util-page.jsp" />
+	</definition>
+	<definition name="guide" extends="user.base">
+		<put-attribute name="title" value="tilte.guide" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/util-page.jsp" />
+	</definition>
+	
+	
+	
+	<!-- ADMIN -->
+	<definition name="admin.base" template="/WEB-INF/layouts/admin/page.jsp">
+		<put-attribute name="header" value="/WEB-INF/layouts/admin/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/layouts/admin/sidebar.jsp" />
+	</definition>
+	
+	<definition name="admin.login" template="/WEB-INF/views/admin/login.jsp">
+		<put-attribute name="title" value="tilte.login" />
+	</definition>
+	
+	<definition name="admin.home" extends="admin.base">
+		<put-attribute name="title" value="tilte.dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/dashboard.jsp" />
+	</definition>
+	
+	<definition name="admin.category" extends="admin.base">
+		<put-attribute name="title" value="tilte.category" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/category.jsp" />
+	</definition>
+	
+	<definition name="admin.article.list" extends="admin.base">
+		<put-attribute name="title" value="tilte.article.list" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/article/list.jsp" />
+	</definition>
+	<definition name="admin.article.crup" extends="admin.base">
+		<put-attribute name="title" value="tilte.article.crup" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/article/crup.jsp" />
+	</definition>
+	<definition name="admin.article.single" extends="user.base">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/article/single.jsp" />
+	</definition>
+	
+	<definition name="admin.utilpage" extends="admin.base">
+		<put-attribute name="title" value="tilte.utilpage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/settings/util-page.jsp" />
+	</definition>
+	<definition name="admin.config" extends="admin.base">
+		<put-attribute name="title" value="tilte.config" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/settings/config.jsp" />
+	</definition>
+	<definition name="admin.i18n" extends="admin.base">
+		<put-attribute name="title" value="tilte.i18n" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/settings/i18n.jsp" />
+	</definition>
+	<definition name="admin.menu" extends="admin.base">
+		<put-attribute name="title" value="tilte.menu" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/settings/menu.jsp" />
+	</definition>
+	<definition name="admin.banner" extends="admin.base">
+		<put-attribute name="title" value="tilte.banner" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/settings/banner.jsp" />
+	</definition>
+	<definition name="admin.image_folder" extends="admin.base">
+		<put-attribute name="title" value="tilte.imagefolder" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/settings/image-folder.jsp" />
+	</definition>
+	<definition name="admin.sub_image_folder" template="/WEB-INF/views/admin/settings/sub-image-folder.jsp">
+	</definition>
+	
+	<definition name="admin.comment" extends="admin.base">
+		<put-attribute name="title" value="tilte.comment" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/comment.jsp" />
+	</definition>
+	
+	<definition name="admin.account.list" extends="admin.base">
+		<put-attribute name="title" value="tilte.account.list" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/account/list.jsp" />
+	</definition>
+	<definition name="admin.account.create" extends="admin.base">
+		<put-attribute name="title" value="tilte.account.create" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/account/create.jsp" />
+	</definition>
+	<definition name="admin.account.security" extends="admin.base">
+		<put-attribute name="title" value="tilte.account.security" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/account/security.jsp" />
+	</definition>
+	<definition name="admin.account.profile" extends="admin.base">
+		<put-attribute name="title" value="tilte.account.profile" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/account/profile.jsp" />
+	</definition>
+	<definition name="admin.account.setting" extends="admin.base">
+		<put-attribute name="title" value="tilte.account.setting" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/account/setting.jsp" />
+	</definition>
+	
+	
+	
+	<!-- ERROR -->
+	<definition name="error.base" template="/WEB-INF/views/errors/error.jsp"></definition>
+	<definition name="error.403" extends="error.base">
+		<put-attribute name="title" value="tilte.error.403" />
+		<put-attribute name="body" value="/WEB-INF/views/errors/403.jsp" />
+	</definition>
+	<definition name="error.404" extends="error.base">
+		<put-attribute name="title" value="tilte.error.404" />
+		<put-attribute name="body" value="/WEB-INF/views/errors/404.jsp" />
+	</definition>
+	<definition name="error.500" extends="error.base">
+		<put-attribute name="title" value="tilte.error.500" />
+		<put-attribute name="body" value="/WEB-INF/views/errors/500.jsp" />
+	</definition>
+	
+</tiles-definitions>
